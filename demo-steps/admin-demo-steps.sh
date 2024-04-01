@@ -31,8 +31,33 @@ gcloud projects add-iam-policy-binding gke-runrate-reporting \
     --member=user:alicev1@wolchesky.altostrat.com \
     --role=roles/gkehub.viewer
 
-# Alice connects to Fleet Cluster via Connect Gateway 
-# https://cloud.google.com/anthos/multicluster-management/gateway/using
-gcloud container fleet memberships get-credentials $east
+# Create Team Scope
+# https://cloud.google.com/anthos/fleet-management/docs/setup-teams
 
+# Grant permissions to make changes
+gcloud projects add-iam-policy-binding gke-runrate-reporting \
+    --member user:admin@wolchesky.altostrat.com \
+    --role='roles/gkehub.admin'
+
+# Create Group Memberships
+# https://cloud.google.com/kubernetes-engine/docs/how-to/google-groups-rbac
+# Created Groups team-a and team-b
+# Added Alicev1 to team-a
+
+# Add team-a permissions to Fleet
+gcloud projects add-iam-policy-binding gke-runrate-reporting \
+   --member=group:team-a@wolchesky.altostrat.com \
+   --role=roles/gkehub.viewer
+
+gcloud projects add-iam-policy-binding gke-runrate-reporting \
+   --member=group:team-a@wolchesky.altostrat.com \
+   --role=roles/gkehub.gatewayEditor
+
+# Create team-a Team Scope and create Team NS - Grant team-a access this scope
+gcloud container fleet scopes create team-a
+gcloud container fleet scopes namespaces create team-a-ns1 --scope=team-a
+gcloud container fleet scopes rbacrolebindings create team-a-rbac-scope \
+   --scope=team-a \
+   --role=admin \
+   --group=team-a@wolchesky.altostrat.com
 
