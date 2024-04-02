@@ -1,4 +1,4 @@
-region=east
+region=central
 
 # Configure Service Mesh
 # https://cloud.google.com/service-mesh/docs/managed/provision-managed-anthos-service-mesh
@@ -16,4 +16,4 @@ gcloud container clusters update cluster-$region \
     --region=us-"$region"1-c \
     --security-group="gke-security-groups@wolchesky.altostrat.com"
 
-    
+# Deploy Config Sync Package
