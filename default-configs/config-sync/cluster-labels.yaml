@@ -2,7 +2,7 @@
 # https://cloud.google.com/anthos-config-management/docs/how-to/cluster-scoped-objects
 
 kind: ClusterSelector
-apiVersion: configmanagement.gke.io/v1
+apiVersion: configsync.gke.io/v1
 metadata:
   name: selector-east
 spec:
@@ -12,7 +12,7 @@ spec:
 
 
 kind: ClusterSelector
-apiVersion: configmanagement.gke.io/v1
+apiVersion: configsync.gke.io/v1
 metadata:
   name: selector-central
 spec:
@@ -22,7 +22,7 @@ spec:
 
 
 kind: ClusterSelector
-apiVersion: configmanagement.gke.io/v1
+apiVersion: configsync.gke.io/v1
 metadata:
   name: selector-west
 spec:
