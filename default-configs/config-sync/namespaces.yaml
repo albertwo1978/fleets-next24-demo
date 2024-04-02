@@ -3,7 +3,7 @@ kind: Namespace
 metadata:
   name: team-a-ns1
   annotations:
-    configmanagement.gke.io/cluster-name-selector: cluster-east,cluster-central
+    configsync.gke.io/cluster-name-selector: cluster-east,cluster-central
   labels:
     istio.io/rev: asm-managed
     istio-injection: enabled
