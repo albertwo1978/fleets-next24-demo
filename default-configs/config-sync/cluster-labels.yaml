@@ -6,6 +6,15 @@ metadata:
     environment: prod
     location: east
 
+kind: ClusterSelector
+apiVersion: configmanagement.gke.io/v1
+metadata:
+  name: selector-east
+spec:
+  selector:
+    matchLabels:
+      location: east
+
 kind: Cluster
 apiVersion: clusterregistry.k8s.io/v1alpha1
 metadata:
@@ -14,6 +23,15 @@ metadata:
     environment: prod
     location: central
 
+kind: ClusterSelector
+apiVersion: configmanagement.gke.io/v1
+metadata:
+  name: selector-central
+spec:
+  selector:
+    matchLabels:
+      location: central
+
 kind: Cluster
 apiVersion: clusterregistry.k8s.io/v1alpha1
 metadata:
@@ -21,3 +39,14 @@ metadata:
   labels:
     environment: prod
     location: west
+
+kind: ClusterSelector
+apiVersion: configmanagement.gke.io/v1
+metadata:
+  name: selector-west
+spec:
+  selector:
+    matchLabels:
+      location: west
+
+
