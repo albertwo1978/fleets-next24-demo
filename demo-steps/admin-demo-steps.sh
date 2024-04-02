@@ -74,7 +74,6 @@ gcloud container fleet scopes rbacrolebindings create team-a-rbac-scope \
    --role=admin \
    --group=team-a@wolchesky.altostrat.com
 
-
 # Add NS to cluster - EAST
 gcloud container fleet memberships get-credentials $east
 kubectl create namespace team-a-ns1
