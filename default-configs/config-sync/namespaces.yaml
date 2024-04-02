@@ -1,9 +1,12 @@
+# Deploy Namespaces based on Cluster Selector
+# https://cloud.google.com/anthos-config-management/docs/how-to/cluster-scoped-objects
+
 apiVersion: v1
 kind: Namespace
 metadata:
   name: team-a-ns1
   annotations:
-    configsync.gke.io/cluster-selector: cluster-east
+    configmanagement.gke.io/cluster-selector: selector-east
   labels:
     istio.io/rev: asm-managed
     istio-injection: enabled
