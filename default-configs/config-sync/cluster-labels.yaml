@@ -1,33 +1,33 @@
 # Create cluster selectors
 # https://cloud.google.com/anthos-config-management/docs/how-to/cluster-scoped-objects
 
-kind: ClusterSelector
-apiVersion: configsync.gke.io/v1
-metadata:
-  name: selector-east
-spec:
-  selector:
-    matchLabels:
-      location: east
+# kind: ClusterSelector
+# apiVersion: configsync.gke.io/v1
+# metadata:
+#   name: selector-east
+# spec:
+#   selector:
+#     matchLabels:
+#       location: east
 
 
-kind: ClusterSelector
-apiVersion: configsync.gke.io/v1
-metadata:
-  name: selector-central
-spec:
-  selector:
-    matchLabels:
-      location: central
+# kind: ClusterSelector
+# apiVersion: configsync.gke.io/v1
+# metadata:
+#   name: selector-central
+# spec:
+#   selector:
+#     matchLabels:
+#       location: central
 
 
-kind: ClusterSelector
-apiVersion: configsync.gke.io/v1
-metadata:
-  name: selector-west
-spec:
-  selector:
-    matchLabels:
-      location: west
+# kind: ClusterSelector
+# apiVersion: configsync.gke.io/v1
+# metadata:
+#   name: selector-west
+# spec:
+#   selector:
+#     matchLabels:
+#       location: west
 
 
