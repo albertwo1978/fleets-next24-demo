@@ -2,7 +2,7 @@
 # https://cloud.google.com/anthos/fleet-management/docs/team-management
 # https://cloud.google.com/anthos/multicluster-management/gateway
 # https://cloud.google.com/anthos/identity
-# 
+# https://cloud.google.com/anthos-config-management/docs/how-to/installing-config-sync
 
 # List and authenicate to cluster in the Fleet
 east=cluster-east
