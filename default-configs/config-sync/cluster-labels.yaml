@@ -1,0 +1,23 @@
+kind: Cluster
+apiVersion: clusterregistry.k8s.io/v1alpha1
+metadata:
+  name: cluster-east
+  labels:
+    environment: prod
+    location: east
+
+kind: Cluster
+apiVersion: clusterregistry.k8s.io/v1alpha1
+metadata:
+  name: cluster-central
+  labels:
+    environment: prod
+    location: central
+
+kind: Cluster
+apiVersion: clusterregistry.k8s.io/v1alpha1
+metadata:
+  name: cluster-west
+  labels:
+    environment: prod
+    location: west
