@@ -44,6 +44,19 @@ gcloud projects add-iam-policy-binding gke-runrate-reporting \
 # Created Groups team-a and team-b
 # Added Alicev1 to team-a
 
+# Update clusters - Add default security group
+gcloud container clusters update cluster-central \
+    --region=us-central1-c \
+    --security-group="gke-security-groups@wolchesky.altostrat.com"
+
+gcloud container clusters update cluster-east \
+    --region=us-east1-c \
+    --security-group="gke-security-groups@wolchesky.altostrat.com"
+
+gcloud container clusters update cluster-west \
+    --region=us-west1-c \
+    --security-group="gke-security-groups@wolchesky.altostrat.com"
+
 # Add team-a permissions to Fleet
 gcloud projects add-iam-policy-binding gke-runrate-reporting \
    --member=group:team-a@wolchesky.altostrat.com \
