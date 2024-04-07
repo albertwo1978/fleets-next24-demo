@@ -15,15 +15,18 @@ https://frontend.endpoints.fleet-dev-1.cloud.goog/
 #    - gcloud projects get-iam-policy fleet-dev-1 --format json > output.json
 #    - gcloud projects set-iam-policy fleet-dev-1 output.json
 # 4. Prestage the okta-login.json file - from here: https://github.com/knee-berts/fleets-next24-demo/blob/dev/okta-login.json
-# 5. Create the welcome-site folder and prestage the following files: 
+# 5. Prestage steps.sh
+# 6. Create the welcome-site folder and prestage the following files: 
 #    - welcome-dr.yaml
 #    - welcome-site.yaml
 #    - welcome-vs.yaml
-# 6. Login and create shorter context
+# 7. Login and create shorter context
 #    kubectl config rename-context connectgateway_fleet-dev-1_us-central1_gke-dev-us-central1-00 central
 #    kubectl config rename-context connectgateway_fleet-dev-1_us-east1_gke-dev-us-east1-02 east
 #    kubectl config rename-context connectgateway_fleet-dev-1_us-west1_gke-dev-us-west1-00 west
-
+# 8. Create aliases?
+alias creds="gcloud container fleet memberships get-credentials gke-dev-us-central1-00 --location us-central1"
+# 9. Logout
 
 ###############################
 ##  Alice Steps              ##
@@ -62,7 +65,8 @@ cat okta-login.json # Show okta login creds
 gcloud auth login --login-config=okta-login.json
 gcloud config list
 gcloud config set project fleet-dev-1
-gcloud container fleet memberships get-credentials gke-dev-us-central1-00 --location us-central1
+gcloud container fleet memberships list # Call out Connect Gateway and Workforce Identity Federation
+gcloud container fleet memberships get-credentials gke-dev-us-central1-00 --location us-central1 
 kubectl get ns # This will fail as expected
 kubectl get ns welcome
 # 4. Show contents of welcome folder
