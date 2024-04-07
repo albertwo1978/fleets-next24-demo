@@ -1,4 +1,10 @@
 ###############################
+##  Review Before Session    ##
+###############################
+https://cloud.google.com/anthos/multicluster-management/gateway
+
+
+###############################
 ##  Setup Steps              ##
 ###############################
 # 1. Open incognito browser and have these two tabs open and authenticated as Alice
