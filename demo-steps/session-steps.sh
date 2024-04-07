@@ -13,11 +13,15 @@ https://frontend.endpoints.fleet-dev-1.cloud.goog/
 #    - welcome-dr.yaml
 #    - welcome-site.yaml
 #    - welcome-vs.yaml
+# 6. Login and create shorter context
+#    kubectl config rename-context connectgateway_fleet-dev-1_us-central1_gke-dev-us-central1-00 central
+#    kubectl config rename-context connectgateway_fleet-dev-1_us-east1_gke-dev-us-east1-02 east
+#    kubectl config rename-context connectgateway_fleet-dev-1_us-west1_gke-dev-us-west1-00 west
+
 
 ###############################
 ##  Alice Steps              ##
 ###############################
-
 # Steps: 
 # 1. Callouts
 #    - Clusters
@@ -30,7 +34,7 @@ https://frontend.endpoints.fleet-dev-1.cloud.goog/
 #    - Refresh browser to show backend
 # 3. Try to create cluster and call out I don't have permission
 #    - Ask Nick for his super powers
-# 4. Reopen Incognito brower - Alice sessoin
+# 4. Reopen Incognito browser - Alice session
 #    - Show Config and explain what's happening
 #    - Show that backend now goes to central - pause for applause
 
@@ -60,4 +64,3 @@ kubectl get ns welcome
 kubectl apply -f welcome-site
 # 5. Go to this URL for the finale
 https://welcome.endpoints.fleet-dev-1.cloud.goog/
-
